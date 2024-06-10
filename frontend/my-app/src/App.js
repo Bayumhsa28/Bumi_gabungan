@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+// import "./App.css";
+// import "./App.scss";
+// import { NavBar } from "./components/NavBar";
+// import { Footer } from "./components/Footer";
+// import { Hero } from "./components/Hero";
+// import { HomeCard } from "./components/HomeCard";
+// import { Words } from "./components/Words";
+// import { Earth } from "./components/Earth";
+// import { Info } from "./components/Info";
+// import { AboutBumiku } from "./components/AboutBumiku";
+// import { Form } from "./components/Form";
+
+// import "bootstrap/dist/css/bootstrap.min.css";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./page/Home";
+import About from "./page/About";
+import Info from "./page/Info";
+import Informasi from "./page/informasi";
+import Donasi from "./page/Donasi";
+import Login from "./page/Login";
+import Register from "./page/Register";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/beranda" element={<Home />} />
+          <Route path="/tentang-kami" element={<About />} />
+          <Route path="/bantuan" element={<Info />} />
+          <Route path="/informasi" element={<Informasi />} />
+          <Route path="/donasi" element={<Donasi />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
